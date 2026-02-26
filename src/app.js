@@ -138,11 +138,10 @@ const commHeader14 = document.getElementById('header14');
 let currentLang = localStorage.getItem('lang') || 'ar';
 
 async function loadLanguage(lang) {
-  const res = await fetch('./lang.json');
+  const res = await fetch('lang.json');
   const data = await res.json();
   const content = data[lang];
   const currentPage = window.location.pathname;
-
   //main if 
   if(currentPage === 'index.html'){
 
