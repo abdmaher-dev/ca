@@ -1,0 +1,522 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* arabic fonts */
+.ar {
+  font-family: "Parastoo", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: larger;
+}
+
+/* Navbar */
+.navbar {
+  @apply text-white h-20; 
+  background-color: rgb(37, 161, 78);
+  /* rgba(11, 78, 33, 0.67) */
+}
+
+.nav-container {
+  @apply max-w-6xl mx-auto flex justify-between items-center py-3 px-6; 
+}
+
+.dir{
+  direction: rtl;
+}
+
+.text-ar {
+  text-align: left;
+}
+
+
+.nav-logo {
+  @apply text-xl font-semibold tracking-wide;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.1rem;
+}
+
+.logo-img {
+  width: 2rem;
+}
+
+.nav-links {
+  @apply  space-x-6 flex;
+}
+
+
+@media(max-width:767px){
+  .nav-links{
+    display: none ;
+  }
+
+  .nav-logo{
+    width: 6rem ;
+    font-weight: bold;
+    text-align: center;
+  }
+}
+
+.nav-link {
+  @apply text-white transition-colors duration-200;
+}
+
+.nav-link{
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.nav-link:hover {
+ color: rgb(20, 34, 60);
+ scale: 1.05;
+ transition: 0.2s ease-in-out;
+}
+
+.menu-btn {
+  @apply md:hidden flex flex-col space-y-1 cursor-pointer;
+}
+
+.menu-line {
+  @apply w-6 h-0.5 bg-white;
+}
+
+/* Side Menu */
+.side-menu {
+  @apply fixed top-0 right-0 h-full text-white transform translate-x-2 transition-transform duration-300;
+  background-color: rgba(20, 60, 43, 0.7);
+  width: 8rem;
+  z-index: 1000;
+}
+
+.side-menu.open {
+  @apply translate-x-0;
+}
+
+.side-menu a {
+  @apply block py-3 px-6 ;
+
+}
+
+/* Overlay (background behind side menu) */
+.overlay {
+  @apply fixed inset-0 bg-black bg-opacity-50 transition-opacity duration-300;
+  z-index: 1000;
+}
+
+/* Hidden state */
+.hidden {
+  @apply opacity-0 pointer-events-none;
+}
+
+/* ============================ */
+
+
+/* Herosection */
+
+.hero {
+  @apply relative flex items-center justify-center text-center text-white;
+  height: 100%;
+  background-image: url('/Images/hero-img.jpg');
+  filter: contrast(100%);
+  @apply bg-cover bg-center bg-no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  padding-top: 6rem;
+  gap: 1rem;
+}
+
+#hero-p {
+  max-width: 60%;
+}
+
+.hero-sect-buttons{
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 8rem;
+}
+
+
+
+.hero-but {
+  font-size: 1.2rem;
+  width: 10rem;
+  height: 2.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  box-shadow: 1px 1px 20px -6px black;
+  transition: 0.2s ease-in-out;
+}
+.indv-button{
+  background-color: rgb(40, 176, 86);
+  font-size: 1.4rem;
+
+}
+
+.indv-button:hover {
+  background-color: rgb(31, 139, 67);
+}
+
+
+.comm-button:hover {
+  background-color: rgba(206, 206, 186, 0);
+  color: #fff;
+  border: 2px solid rgba(206, 206, 186, 1);
+}
+
+
+.comm-button{
+  background-color: rgba(206, 206, 186, 1);
+  color: black;
+}
+
+.hero-text{
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.hero-logo {
+  border-radius: 50%;
+  width: 4rem;
+
+}
+.hero-content {
+  @apply  bg-gradient-to-br from-green-50 to-emerald-100;
+  height: 28rem;
+}
+
+.line {
+  width: 50vw;
+  height: 2px;
+  background-color: black;
+}
+
+/* under hero section */ 
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  padding-top:4rem ;
+}
+.under-hero-header {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.card-con {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.card {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  width: 20rem;
+  height: 14rem;
+
+  background-color: white;
+  padding: 1rem;
+  border-radius: 12px;
+
+  box-shadow: 1px 1px 32px -20px black;
+}
+
+@media (max-width:1069px) {
+  .card-con{
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+  }
+  .under-hero-header{
+    font-size: 1.6rem;
+  }
+
+  .art-header{
+    font-size: 1.6rem;
+  }
+  .card {
+    width: 100%;
+    margin: 1rem;
+    padding: 1rem;
+  }
+  .hero-content{
+    height: 100%;
+  }
+
+  .hero-sect-buttons {
+    width: 16rem;
+  }
+
+  .hero-but{
+    font-size: 1.2rem;
+  }
+}
+
+/* article section */
+
+.article-con {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;  
+  gap: 2rem;
+  padding-top: 2rem;
+}
+
+.art-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 24rem;
+  padding: 1rem;
+  gap: 1rem;
+  text-align: center;
+}
+
+.art-icons {
+  width: 4rem;
+  border-radius: 50%;
+}
+
+.art-header {
+  background-color: white;
+  text-align: center;
+  padding-top: 2rem;
+  font-size:2rem ;
+  font-weight: bold;
+}
+
+
+/* Footer */
+
+.footer{
+  background-color: rgba(31,41,55,1);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.6rem;
+  padding-top: 4rem;
+  margin-top: 4rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  margin-top: 2rem;
+  gap: 3rem;
+}
+
+.footer-el {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-el-header {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+.footer-el-p{
+  font-size: 0.8rem;
+  color: rgba(255,255,255, 0.6);
+  margin-bottom: 2rem;
+}
+
+.footer-header {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.footer-p{
+    color: rgba(255,255,255, 0.6);
+
+}
+
+.el-1{
+  color: lime;
+}
+.el-2{
+  color: rgb(110, 110, 255);
+}
+.el-3{
+  color: rgb(255, 96, 149);
+}
+
+.art-item-header{
+  font-weight: bold;
+}
+
+/* Cal */
+
+
+/* العناصر المشتركة */
+.cal-sect {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.form-con {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-5;
+}
+.form-label {
+  @apply block text-gray-700 font-semibold mb-2;
+}
+
+.form-input {
+  @apply w-full rounded-xl border-gray-300 focus:ring-2 focus:ring-emerald-400 focus:border-emerald-400 transition-all duration-200 shadow-sm;
+  margin-top: 2rem;
+}
+
+.btn-primary {
+  @apply bg-emerald-600 text-white font-bold px-8 py-3 rounded-2xl hover:bg-emerald-700 hover:shadow-lg transition-all duration-300;
+}
+
+/* كروت الإدخال */
+.input-card {
+  @apply bg-white/70 backdrop-blur-sm border border-emerald-100 rounded-2xl p-4 shadow-sm hover:shadow-md transition;
+}
+
+/* تأثير على الأجهزة الصغيرة */
+@media (max-width: 768px) {
+  .form-input {
+    @apply text-base;
+  }
+}
+
+.button {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+#result {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.cal-sect{
+  display: flex;
+  justify-content: center;
+  direction: rtl;
+}
+
+
+/* about page  */
+
+/* Custom Arabic Title Classes */
+.about-sect{
+  padding: 1.6rem;
+  margin-bottom: 12rem;
+}
+
+.about-content-img{
+  display: flex;
+  align-items: center;
+  margin-top: 6rem;
+  gap: 8rem;
+}
+
+
+.about-header-content {
+  margin-top: 6rem;
+  text-align: center;
+}
+
+.about-sect-elements {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.effect-con {
+  margin-top: 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.effect-con-grid {
+  margin-top: 2rem;
+  display: flex;
+  gap: 2rem;
+}
+
+.fast-link{
+  color: blue;
+  text-decoration: underline  ;
+}
+
+.details-con {
+  display: flex;
+  gap: 2rem;
+}
+
+.how-to-reduce-con{
+  margin-top: 2rem;
+  padding: 1rem;
+}
+
+.chart-and-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+@media (max-width: 950px) {
+  .about-content-img{
+    flex-direction: column;
+  }
+  .about-sect-elements{
+    flex-direction: column;
+  } 
+
+  .effect-con-grid{
+    flex-direction: column;
+  }
+
+  .details-con {
+    flex-direction: column;
+  }
+
+  .chart-and-text{
+    flex-direction: column;
+  }
+
+}
+
+.section-title {
+  @apply text-3xl md:text-4xl font-bold text-green-700 mb-4;
+  
+}
+
+.section-text {
+  @apply text-gray-700 leading-8 text-lg mb-6;
+}
+
+.sub-title {
+  @apply text-xl font-semibold text-green-600 mb-2;
+}
+
+.sub-text {
+  @apply text-gray-600 leading-7;
+}
