@@ -119,7 +119,7 @@
 .hero {
   @apply relative flex items-center justify-center text-center text-white;
   height: 100%;
-  background-image: url('Images/hero-img.jpg');
+  background-image: url('../Images/hero-img.jpg');
   filter: contrast(100%);
   @apply bg-cover bg-center bg-no-repeat;
   display: flex;
@@ -520,3 +520,4 @@
 .sub-text {
   @apply text-gray-600 leading-7;
 }
+
