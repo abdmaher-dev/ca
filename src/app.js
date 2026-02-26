@@ -142,6 +142,7 @@ async function loadLanguage(lang) {
   const data = await res.json();
   const content = data[lang];
   const currentPage = window.location.pathname;
+  console.log(currentPage);
   //main if 
   if(currentPage === '/index.html'){
 
@@ -568,5 +569,6 @@ function calculateCommunity() {
   }
 
 }
+
 
 
