@@ -138,13 +138,13 @@ const commHeader14 = document.getElementById('header14');
 let currentLang = localStorage.getItem('lang') || 'ar';
 
 async function loadLanguage(lang) {
-  const res = await fetch('lang.json');
+  const res = await fetch('./lang.json');
   const data = await res.json();
   const content = data[lang];
   const currentPage = window.location.pathname;
 
   //main if 
-  if(currentPage === '/index.html'){
+  if(currentPage === 'index.html'){
 
    transindex();
     // BUTTON TEXT
@@ -152,18 +152,18 @@ async function loadLanguage(lang) {
     // DIRECTION
     dirSwitch();
   }
-  else if(currentPage ==='/calculator.html'){
+  else if(currentPage ==='pages/calculator.html'){
     transcal();
      // BUTTON TEXT
     langButtons.forEach(e => (e.textContent = content.langButton));
     //Dir
     dirSwitch();
   }
-    else if(currentPage ==='/Community.html'){
+    else if(currentPage ==='pages/Community.html'){
       transCommunity();
     langButtons.forEach(e => (e.textContent = content.langButton));
     dirSwitch();
-  }else if(currentPage ==='/About.html'){
+  }else if(currentPage ==='pages/About.html'){
     transAbout()
     langButtons.forEach(e => (e.textContent = content.langButton));
     dirSwitch();
