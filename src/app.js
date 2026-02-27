@@ -152,18 +152,18 @@ async function loadLanguage(lang) {
     // DIRECTION
     dirSwitch();
   }
-  else if(currentPage ==='/ca/pages/calculator.html'){
+  else if(currentPage ==='/ca/calculator.html'){
     transcal();
      // BUTTON TEXT
     langButtons.forEach(e => (e.textContent = content.langButton));
     //Dir
     dirSwitch();
   }
-    else if(currentPage ==='/ca/pages/Community.html'){
+    else if(currentPage ==='/ca/Community.html'){
       transCommunity();
     langButtons.forEach(e => (e.textContent = content.langButton));
     dirSwitch();
-  }else if(currentPage ==='/ca/pages/About.html'){
+  }else if(currentPage ==='/ca/About.html'){
     transAbout()
     langButtons.forEach(e => (e.textContent = content.langButton));
     dirSwitch();
@@ -569,6 +569,7 @@ function calculateCommunity() {
   }
 
 }
+
 
 
 
